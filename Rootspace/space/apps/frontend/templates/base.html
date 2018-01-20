@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% load staticfiles %}
+{% static "images/Iam.jpg" as myphoto %}
+<html{% if LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}"{% endif %}>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+<body id="app">
+{% block header %}
+<header>
+<!-- Классы navbar и navbar-default (базовые классы меню) -->
+<nav class="navbar navbar-default">
+  <!-- Контейнер (определяет ширину Navbar) -->
+  <div class="container-fluid">
+    <!-- Заголовок -->
+    <div class="navbar-header">
+      <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Бренд или название сайта (отображается в левой части меню) -->
+      <a class="navbar-brand font-size:50px" >Michail Bondarev<br>backend developer/network engineer</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-main">
+      <!-- Содержимое основной части -->
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+      </ul>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<main>
+	<div class="container">
+		<div class="row">
+			<article class="col-sm-12 col-md-8 col-lg-9">
+			<!--Содержимое-->
+
+			</article>
+		<aside class="col-sm-12 col-md-4 col-lg-3">
+			<div class="row">
+				<div class="col-sm-6 col-md-12">
+				<!--Содержимое-->
+				</div>
+				<div class="col-sm-6 col-md-12">
+				<!--Содержимое-->
+				</div>
+			</div>
+		</aside>
+		</div>
+	</div>
+</main>
+{% endblock %}
+{% block footer %}
+<footer>
+	<div class="navbar-fixed-bottom row-fluid">
+		<div class="navbar-inner">
+			<div class="container">
+
+</footer>
+{% endblock %}
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
+
+<script type="text/javascript" src="{% static "vuejs/mydjangovue.js" %}"></script>
+</body>
+</html>
