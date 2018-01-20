@@ -19,20 +19,19 @@ from rest_framework import routers
 
 
 routerFalse = routers.DefaultRouter()
-routerFalse.register(r'get_messages', SpaceViewSet1False)
-#routerFalse = routerFalse.urls
-urlpatterns = routerFalse.urls
+routerFalse.register(r'get_messages/false', SpaceViewSet1False)
+#urlpatterns = routerFalse.urls
+routerTrue = routers.DefaultRouter()
+routerTrue.register(r'get_messages/true', SpaceViewSetTrue)
+
+routerAll = routers.DefaultRouter()
+routerAll.register(r'get_messages/all', SpaceViewSet1All)
 
 
-#urlpatterns = [
-#    url(r'^api/v1/', include(routerFalse)),
-#
-#]
+urlpatterns = [
+    url(r'', include(routerFalse.urls)),
+    url(r'', include(routerTrue.urls)),
+    url(r'', include(routerAll.urls)),
+]
 
-#urlpatterns = [
-#    url(r'test/', EArticleView.as_view(), name='test'),
-#]
-#urlpatterns = [
-#    url(r'test/', EArticleView.as_view(), name='test'),
-#
-#]
+

@@ -27,10 +27,4 @@ urlpatterns = [
     url(r'^$', index, name='index'),
 ]
 
-#urlpatterns = [
-#    url(r'test/', EArticleView.as_view(), name='test'),
-#]
-#urlpatterns = [
-#    url(r'test/', EArticleView.as_view(), name='test'),
-#
-#]
+
