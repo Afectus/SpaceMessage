@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container" id="getAllMessage">
+        <h2>Available Messages</h2>
+        <p v-if="messages.length == 0">Sorry, no jobs currently available</p>
+
+        <div v-for="message in messages" class="message container">
+            <div class="col-sm-12">
+                <h3>[[ message.id ]]</h3>
+                <h3>[[ message.title ]]</h3>
+                <h3>[[ message.status ]]</h3>
+
+            </div>
+            <div class="col-sm-12">
+                <p>[[ message.text ]]</p>
+                <button class="btn" v-on:click="changeStatus($index)"><span class="glyphicon glyphicon-ok"></span></button>
+                <button class="btn" v-on:click="removeMessage($index)"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
