@@ -21,6 +21,8 @@ from rest_framework import routers
 routerFalse = routers.DefaultRouter()
 routerFalse.register(r'get_messages/false', SpaceViewSet1False)
 
+
+
 routerTrue = routers.DefaultRouter()
 routerTrue.register(r'get_messages/true', SpaceViewSetTrue)
 
@@ -29,9 +31,11 @@ routerAll.register(r'get_messages/all', SpaceViewSet1All)
 
 
 urlpatterns = [
+
     url(r'', include(routerFalse.urls)),
     url(r'', include(routerTrue.urls)),
     url(r'', include(routerAll.urls)),
+
 ]
 
 

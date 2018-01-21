@@ -25,6 +25,9 @@ from rest_framework import routers
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'getmessall', all_messages, name='all_messages'),
+    url(r'getdread_messages', dread_messages, name='dread_messages'),
+    url(r'getread_messages', read_messages, name='read_messages'),
 ]
 
 

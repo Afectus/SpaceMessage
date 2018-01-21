@@ -11,7 +11,7 @@
     <meta name="keywords" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
-<body id="app">
+<body>
 {% block header %}
 <header>
 <!-- Классы navbar и navbar-default (базовые классы меню) -->
@@ -27,12 +27,17 @@
         <span class="icon-bar"></span>
       </button>
       <!-- Бренд или название сайта (отображается в левой части меню) -->
-      <a class="navbar-brand font-size:50px" >Michail Bondarev<br>backend developer/network engineer</a>
+      <a class="navbar-brand font-size:50px" >Michail Bondarev<br>Backend developer/network engineer</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-main">
       <!-- Содержимое основной части -->
       <ul class="nav navbar-nav">
-        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'index' %}">Написать сообщение</a></li>
+        <li><a href="{% url 'all_messages' %}">Все сообщения</a></li>
+        <li><a href="{% url 'dread_messages' %}">Не прочитанные</a></li>
+        <li><a href="{% url 'read_messages' %}">Прочитанные</a></li>
+
+
       </ul>
     </div>
 </header>
