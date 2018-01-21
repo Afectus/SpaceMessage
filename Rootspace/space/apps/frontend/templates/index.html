@@ -2,28 +2,31 @@
 
 {% block content %}
     <div class="container">
-        <h2>Post a Job</h2>
+        <h2>Post a Message</h2>
         <form class="form-group col-sm-8 form-horizontal">
-            <label class="form-label" for="title">Job Title</label>
-            <input class="form-control" id="title" v-model="title">
+            <label class="form-label" for="title">Message Title</label>
+            <input class="form-control" id="title" v-model="titleinput">
 
-            <label class="form-label" for="description">Job Description</label>
-            <textarea class="form-control" id="description" rows="3" v-model="text"></textarea>
+            <label class="form-label" for="description">Message text</label>
+            <textarea class="form-control" id="description" rows="3" v-model="textinupt"></textarea>
 
-            <button class="btn" v-on:click="addJob()">Submit</button>
+            <button class="btn" v-on:click="addMessage()">Submit</button>
         </form>
     </div>
 
     <div class="container">
-        <h2>Available Jobs</h2>
-        <p v-if="jobs.length == 0">Sorry, no jobs currently available</p>
-        <div v-for="job in jobs" class="job container">
+        <h2>Available Messages</h2>
+        <p v-if="messages.length == 0">Sorry, no jobs currently available</p>
+        <div v-for="message in messages" class="message container">
             <div class="col-sm-12">
-                <h3>[[ job.title ]]</h3>
+                <h3>[[ message.title ]]</h3>
+                <h3>[[ message.status ]]</h3>
+
             </div>
             <div class="col-sm-12">
-                <p>[[ job.text ]]</p>
-                <button class="btn" v-on:click="removeJob($index)"><span class="glyphicon glyphicon-trash pull-right"></span></button>
+                <p>[[ message.text ]]</p>
+                <button class="btn" v-on:click="changeStatus($index)"><span class="glyphicon glyphicon-ok"></span></button>
+                <button class="btn" v-on:click="removeMessage($index)"><span class="glyphicon glyphicon-remove"></span></button>
             </div>
         </div>
     </div>

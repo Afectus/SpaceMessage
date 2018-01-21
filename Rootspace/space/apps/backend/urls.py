@@ -20,7 +20,7 @@ from rest_framework import routers
 
 routerFalse = routers.DefaultRouter()
 routerFalse.register(r'get_messages/false', SpaceViewSet1False)
-#urlpatterns = routerFalse.urls
+
 routerTrue = routers.DefaultRouter()
 routerTrue.register(r'get_messages/true', SpaceViewSetTrue)
 
