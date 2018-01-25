@@ -13,33 +13,32 @@ class SpaceMessage(models.Model):
 
 #stringForToken = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
 #52^4= 7311616 возможных токенов
-    #while token == '' or token == TokenGenerator.objects.filter(tokens=token):
-#def maketokem():
-#    stringForToken = 'qw'
-#    token = ''
-#    while True:
-#
-#        if token == '' or token == TokenGenerator.objects.filter(tokens=token):
-#            for x in range(1):
-#                s = random.choice(stringForToken)
-#                token = token + s
-#                kek = TokenGenerator.objects.filter(tokens=token)
-#                # print(TokenGenerator.objects.filter(tokens=token))
-#                print('-' * 50)
-#                print(kek)
-#                print(s)
-#                break
-#        else:
-#            return token
+
 
 def maketokem():
-    stringForToken = 'qw'
+    stringForToken = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
     token = ''
-    for x in range(1):
-        s = random.choice(stringForToken)
-        token = token + s
-
-    return token
+    #задаем длинну ключа
+    lenKey = int(4)
+    #Вычеляем возможное кол-во ключей
+    lenstringForToken = int(len(stringForToken))
+    y = lenstringForToken ** lenKey
+    #высчитываем оставшееся кол-во ключей
+    getTokenList = TokenGenerator.objects.all()
+    x = y - len(getTokenList)
+    if x == 0:
+        pass #если ключи кончились, тут уже не чего не поделать, надо расширятца либо чистить существующие
+    else:
+        while token == '' :
+            for x in range(lenKey):
+                randomKeyGenerate = random.choice(stringForToken)
+                token = token + randomKeyGenerate
+                a = TokenGenerator.objects.filter(tokens=token)#переменная для дальнейшей проверки получившегося ключа на предмет повторения
+            if len(a) !=0:
+                token = ''
+            else:
+                return token
+    
 class TokenGenerator(models.Model):
     tokens = models.CharField(default=maketokem, max_length=255, unique=True)
     status = models.BooleanField(default=False)
