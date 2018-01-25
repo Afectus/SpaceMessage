@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'getmessall', all_messages, name='all_messages'),
     url(r'getdread_messages', dread_messages, name='dread_messages'),
     url(r'getread_messages', read_messages, name='read_messages'),
+    url(r'create_token', create_token, name='create_token'),
+    url(r'active_token', active_token, name='active_token'),
+    url(r'dactive_token', read_messages, name='dactive_token'),
 ]
 
 

@@ -22,3 +22,19 @@ def dread_messages(request):
 def read_messages(request):
     html = TemplateResponse(request, 'read_messages.html')
     return HttpResponse(html.render())
+    
+    
+
+
+def create_token(request):
+    html = TemplateResponse(request, 'create_token.html')
+    return HttpResponse(html.render())
+    
+def active_token(request):
+    html = TemplateResponse(request, 'active_token.html')
+    return HttpResponse(html.render())
+    
+def dactive_token(request):
+    html = TemplateResponse(request, 'dactive_token.html')
+    return HttpResponse(html.render())    
+

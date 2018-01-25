@@ -7,13 +7,28 @@ var demo = new Vue({
         counter:0,
     },
     methods: {
-        addMessage: function () {
+        addToken: function () {
             var newMessage = {
                 title: this.titleinput.trim(),
                 text: this.textinupt.trim()
             };
 
-            this.$http.post('http://127.0.0.1:8000/api/v1/get_messages/false/', newMessage);
+            this.$http.post('http://127.0.0.1:8000/api/v1/get_token/all/');
+        },
+
+    },
+
+});
+
+var demo = new Vue({
+    el: '#addToken',
+    data: {
+        'messages': [],
+        counter:0,
+    },
+    methods: {
+        addMessage: function () {
+            this.$http.post('http://127.0.0.1:8000/api/v1/get_messages/false/');
         },
 
     },
