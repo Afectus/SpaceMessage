@@ -10,4 +10,4 @@ class SpaceMessageSerializer(serializers.HyperlinkedModelSerializer):
 class TokenGeneratorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TokenGenerator
-        fields = ('id', 'tokens')
+        fields = ('id', 'tokens', 'status')

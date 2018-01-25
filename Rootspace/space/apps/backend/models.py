@@ -22,3 +22,4 @@ def maketokem():
     
 class TokenGenerator(models.Model):
     tokens = models.CharField(default=maketokem, max_length=255)
+    status = models.BooleanField(default=False)
