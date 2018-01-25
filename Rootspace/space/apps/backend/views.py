@@ -1,7 +1,7 @@
 
 from rest_framework import viewsets
-from .models import SpaceMessage
-from .serializers import SpaceMessageSerializer
+from .models import *
+from .serializers import *
 
 # Create your views here.
 
@@ -13,10 +13,14 @@ class SpaceViewSet1False(viewsets.ModelViewSet):
     queryset = SpaceMessage.objects.all().filter(status=False)
     serializer_class = SpaceMessageSerializer
 
-def index(request):
-    html = TemplateResponse(request, 'index.html')
-    return HttpResponse(html.render())
-
 class SpaceViewSet1All(viewsets.ModelViewSet):
     queryset = SpaceMessage.objects.all()
     serializer_class = SpaceMessageSerializer
+
+
+
+
+    
+class TokenGeneratorSet1All(viewsets.ModelViewSet):
+    queryset = TokenGenerator.objects.all()
+    serializer_class = TokenGeneratorSerializer
