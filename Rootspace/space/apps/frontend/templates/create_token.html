@@ -16,11 +16,11 @@
 		<h2>Dont active Tokens</h2>
 		<p v-if="tokenz.length == 0">Sorry, dont have not active tokens</p>
 		<div v-for="token in tokenz" class="token container">
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 				<p>[[ token.tokens ]]</p>
 			</div>
 		
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 				<button class="btn" v-on:click="activedToken($index)"><p>Активировать ключ</span></button>
 			</div>	
 	</div>
