@@ -1,11 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container" id="addToken">
-        <h2>Get a token</h2>
-            <div class="col-sm-12">
-                <button class="btn" v-on:click="addToken()"><span class="glyphicon glyphicon-ok"></span></button>
+    <div class="container" id="addToken">   
+            <div class="col-sm-6">
+            <h2>Get a token</h2>
+                <button class="btn" v-on:click="addToken()"><p>Получить ключ</span></button>
             </div>
-        </form>
+            <div class="col-sm-6">
+            <h2>Осталось ключей</h2>
+                <p> [[7311616 - tokenz.length ]]</p>
+            </div>
     </div>
+    
+   <div class="container" id='getFalseToken'>
+		<h2>Dont active Tokens</h2>
+		<p v-if="tokenz.length == 0">Sorry, dont have not active tokens</p>
+		<div v-for="token in tokenz" class="token container">
+			<div class="col-sm-2">
+				<p>[[ token.tokens ]]</p>
+			</div>
+		
+			<div class="col-sm-2">
+				<button class="btn" v-on:click="activedToken($index)"><p>Активировать ключ</span></button>
+			</div>	
+	</div>
+	
+
+	
 {% endblock %}

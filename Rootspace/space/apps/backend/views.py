@@ -24,3 +24,11 @@ class SpaceViewSet1All(viewsets.ModelViewSet):
 class TokenGeneratorSet1All(viewsets.ModelViewSet):
     queryset = TokenGenerator.objects.all()
     serializer_class = TokenGeneratorSerializer
+    
+class TokenGeneratorSet1False(viewsets.ModelViewSet):
+    queryset = TokenGenerator.objects.filter(status=False)
+    serializer_class = TokenGeneratorSerializer
+    
+class TokenGeneratorSet1True(viewsets.ModelViewSet):
+    queryset = TokenGenerator.objects.filter(status=True)
+    serializer_class = TokenGeneratorSerializer

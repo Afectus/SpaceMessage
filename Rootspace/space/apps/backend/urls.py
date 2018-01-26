@@ -30,6 +30,11 @@ routerAll.register(r'get_messages/all', SpaceViewSet1All)
 routerTokenAll = routers.DefaultRouter()
 routerTokenAll.register(r'get_token/all', TokenGeneratorSet1All)
 
+routerTokenFalse = routers.DefaultRouter()
+routerTokenFalse.register(r'get_token/false', TokenGeneratorSet1False)
+
+routerTokenTrue = routers.DefaultRouter()
+routerTokenTrue.register(r'get_token/true', TokenGeneratorSet1True)
 
 urlpatterns = [
 
@@ -37,6 +42,8 @@ urlpatterns = [
     url(r'', include(routerTrue.urls)),
     url(r'', include(routerAll.urls)),
     url(r'', include(routerTokenAll.urls)),
+    url(r'', include(routerTokenFalse.urls)),
+    url(r'', include(routerTokenTrue.urls)),
 
 ]
 

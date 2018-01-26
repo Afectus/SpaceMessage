@@ -38,7 +38,6 @@
         <li><a href="{% url 'read_messages' %}">Прочитанные</a></li>
         <li><a href="{% url 'create_token' %}">Получить ключ</a></li>
         <li><a href="{% url 'active_token' %}">Активированные ключи</a></li>
-        <li><a href="{% url 'dactive_token' %}">Не активированные ключи</a></li>
 
 
       </ul>
@@ -77,10 +76,10 @@
 {% endblock %}
 
 
-
+{% block vueJs %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.min.js"></script>
-
 <script type="text/javascript" src="{% static "vuejs/mydjangovue.js" %}"></script>
+{% endblock %}
 </body>
 </html>

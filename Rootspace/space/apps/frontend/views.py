@@ -33,8 +33,5 @@ def create_token(request):
 def active_token(request):
     html = TemplateResponse(request, 'active_token.html')
     return HttpResponse(html.render())
-    
-def dactive_token(request):
-    html = TemplateResponse(request, 'dactive_token.html')
-    return HttpResponse(html.render())    
+      
 
