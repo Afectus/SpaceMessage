@@ -18,11 +18,6 @@ from .views import *
 from rest_framework import routers
 
 
-
-
-
-
-
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'getmessall', all_messages, name='all_messages'),
@@ -32,5 +27,4 @@ urlpatterns = [
     url(r'active_token', active_token, name='active_token'),
 
 ]
-
 
